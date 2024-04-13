@@ -261,7 +261,7 @@ namespace CedMod.Patches
             {
                 info.Append("\nClass: ")
                     .Append(PlayerRoleLoader.AllRoles.TryGetValue(player.GetRoleId(), out PlayerRoleBase cl)
-                        ? cl.RoleTypeId
+                        ? cl.RoleTypeId.ToString()
                         : "None");
                 info.Append(" <color=#fcff99>[HP: ").Append(CommandProcessor.GetRoundedStat<HealthStat>(player))
                     .Append("]</color>");

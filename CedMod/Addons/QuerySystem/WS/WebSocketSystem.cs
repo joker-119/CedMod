@@ -169,7 +169,7 @@ namespace CedMod.Addons.QuerySystem.WS
                     }
                     else
                     {
-                        Log.Error($"Lost connection to CedMod Panel {i.CloseStatus} {i.CloseStatusDescription} {i.Type}, reconnecting in 5000ms\n{(i.Exception == null || !CedModMain.Singleton.Config.QuerySystem.Debug ? "" : i.Exception)}");
+                        Log.Error($"Lost connection to CedMod Panel {i.CloseStatus} {i.CloseStatusDescription} {i.Type}, reconnecting in 5000ms\n{(i.Exception == null || !CedModMain.Singleton.Config.QuerySystem.Debug ? "" : i.Exception.ToString())}");
                         await Task.Delay(5000, CedModMain.CancellationToken);
                         lock (reconnectLock)
                         {

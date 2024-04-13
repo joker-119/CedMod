@@ -61,7 +61,7 @@ namespace CedMod.Addons.AdminSitSystem.Commands
                 if (lift.Value.WorldspaceBounds.Contains(plr.Position))
                 {
                     Log.Info($"Player in lift {lift.Key}");
-                    var door = DoorVariant.AllDoors.Where(s => s is not ElevatorDoor).OrderBy(s => Vector3.Distance(s.transform.position, lift.Value.transform.position)).FirstOrDefault();
+                    var door = DoorVariant.AllDoors.OrderBy(s => Vector3.Distance(s.transform.position, lift.Value.transform.position)).FirstOrDefault();
                     if (door != null)
                     {
                         var pos = DoorTPCommand.EnsurePositionSafety(door.transform);

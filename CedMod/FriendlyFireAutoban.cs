@@ -107,7 +107,7 @@ namespace CedMod
             if (damageHandler is AttackerDamageHandler attackerDamageHandler)
                 attackerRole = attackerDamageHandler.Attacker.Role.GetTeam();
 
-            if (attacker.CurrentItem is not null && attacker.CurrentItem.name == "Scp330(Clone)" && !CedModMain.Singleton.Config.CedMod.AutobanPinkCandies)
+            if (attacker.CurrentItem != null && attacker.CurrentItem.name == "Scp330(Clone)" && !CedModMain.Singleton.Config.CedMod.AutobanPinkCandies)
             {
                 return false;
             }
